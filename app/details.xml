@@ -1,0 +1,12 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+	<Page.actionBar>
+		<ActionBar title="WiredApp"  />
+	</Page.actionBar>
+	<GridLayout rows="30 *">
+		
+        <Button text="Navigate back" tap="onTap"></Button>
+
+		<WebView row="1" loaded="onWebViewLoaded" id="myWebView" src="{{ webViewSrc }}" />
+    <Label row="2" text="{{ result }}" />
+	</GridLayout>
+</Page>

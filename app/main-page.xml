@@ -1,0 +1,25 @@
+<Page xmlns="http://www.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+	<Page.actionBar>
+		<ActionBar title="WiredApp" />
+	</Page.actionBar>
+	<GridLayout rows="10 10 *">
+		
+		<ListView items="{{ myTitles }}" 
+                  itemTap="onItemTap" 
+                  loaded="{{ onListViewLoaded }}" 
+                  separatorColor="black" rowHeight="230"
+                  class="list-group" id="listView" row="2">
+			<ListView.itemTemplate>
+				<GridLayout class="list-group-item" columns="100 * ">
+				
+				    <Image src="{{thumbnail}}"  column="0" width="100" height="200" stretch="aspectFill"></Image>
+					<StackLayout column="1">
+					<Label textWrap="true" text="{{ title || 'Downloading...' }}"  class="title" fontSize="20" fontWeight="Bold"/>
+					<Label text="{{ description || 'Downloading...' }}" textWrap="true" fontSize="16"/>
+					<Label text="{{ pubDate}}" textWrap="true" fontSize="14"/>
+					</StackLayout>
+				</GridLayout>
+			</ListView.itemTemplate>
+		</ListView>
+	</GridLayout>
+</Page>
